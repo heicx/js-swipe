@@ -13,8 +13,13 @@ section {width:320px;margin:0 auto;overflow:hidden;position:relative;}
 section a {display:inline-block;float:left;width:320px;}
 section ul {width:100%;list-style:none;text-align:center;position:absolute;bottom:0;}
 section ul li {width:8px;height:8px;border-radius:10px;clear:both;display:inline-block;background-color:black;}
+section .on {background-color:#e4007f;}
 
 #swipe_content {width:100%;-webkit-transform:translate3d(0, 0, 0);}
+
+#arrow .arrow_l {background:url(./images/arrow_left.png) no-repeat;width:25px;height:40px;position:absolute;background-size:contain;left:0;top:30px;}
+#arrow .arrow_r {background:url(./images/arrow_right.png) no-repeat;width:25px;height:40px;position:absolute;background-size:contain;right:0;top:30px;}
+
 </style>
 <script src="./js/index.js"></script>
 </head>
@@ -44,15 +49,15 @@ section ul li {width:8px;height:8px;border-radius:10px;clear:both;display:inline
 			</div>
 		</div>
 		<ul>
-			<li></li>
+			<li class="on"></li>
 			<li></li>
 			<li></li>
 			<li></li>
 		</ul>
-		<div>
-			<a class="arrow_l"></a>
+		<div id="arrow">
+			<span class="arrow_l"></span>
+			<span class="arrow_r"></span>
 		</div>
-		<div></div>
 	</section>
 </body>
 </html>
