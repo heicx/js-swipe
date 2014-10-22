@@ -9,27 +9,28 @@ window.onload = function(){
 		length: swipe_content.children.length,
 		offset: 0,
 		on: function(offsetval, timeout){
-			if(this.count < swipe_content.children.length-1){
-				
+			var single_pic_width = swipe_content.children[0].children[0].clientWidth;
+			if(this.count < this.length-1){
+				this.count++;
+				if(offsetval > 0){
+					if(this.offset === 0){
+						this.offset = -swipe_content.clientWidth + single_pic_width;
+					}else{
+						this.offset = this.offset + offsetval;
+					}
+				}else{
+					if(this.offset === (-1 * single_pic_width * this.count) ){
+						this.offset = -single_pic_width;
+					}else{
+						this.offset = this.offset + offsetval;
+					}
+				}
 			}else{
+				this.offset = 0;
 				this.count = 0;
 			}
-
-			if(offsetval > 0){
-				if(this.offset === 0){
-					this.offset = -swipe_content.clientWidth + swipe_content.children[0].children[0].clientWidth;
-				}else{
-					this.offset = this.offset + offsetval;
-				}
-			}else{
-				if(this.offset === 0){
-					this.offset = -swipe_content.children[0].children[0].clientWidth;
-				}else{
-					this.offset = this.offset + offsetval;
-				}
-			}
 			
-			swipe_content.style.webkitTransform = "translate3d("+this.offset +"px, 0, 0)";
+			swipe_content.style.webkitTransform = "translate3d("+ this.offset +"px, 0, 0)";
 			swipe_content.style.webkitTransition = timeout + "ms ease-out";
 		}
 	}
