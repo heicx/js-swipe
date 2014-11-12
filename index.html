@@ -9,11 +9,11 @@
 <style>
 * {margin:0; padding:0;}
 
-section {width:320px;margin:0 auto;overflow:hidden;position:relative;}
-section a {display:inline-block;float:left;width:320px;}
-section ul {width:100%;list-style:none;text-align:center;position:absolute;bottom:0;}
-section ul li {width:8px;height:8px;border-radius:10px;clear:both;display:inline-block;background-color:black;}
-section .on {background-color:#e4007f;}
+.wrap {width:320px;margin:0 auto;overflow:hidden;position:relative;}
+section .img-banner a{display:inline-block;float:left;width:320px;}
+section .banner ul{width:100%;list-style:none;text-align:center;position:absolute;bottom:0;}
+section .banner ul li {width:8px;height:8px;border-radius:10px;clear:both;display:inline-block;background-color:black;}
+section .banner .on {background-color:#e4007f;}
 
 #swipe_content {width:100%;-webkit-transform:translate3d(0, 0, 0);}
 
@@ -25,39 +25,50 @@ section .on {background-color:#e4007f;}
 </head>
 
 <body>
-	<section>
-		<div id="swipe_content" style="width:1280px;">
-			<div>
-				<a>
-					<img src="./images/img1.jpg" width="320" height="100" />
-				</a>
+	<div class="wrap">
+		<section class="banner">
+			<div class="img-banner" id="swipe_content" style="width:1280px;">
+				<div>
+					<a>
+						<img src="./images/img1.jpg" width="320" height="100" />
+					</a>
+				</div>
+				<div>
+					<a>
+						<img src="./images/img2.jpg" width="320" height="100" />
+					</a>
+				</div>
+				<div>
+					<a>
+						<img src="./images/img3.jpg" width="320" height="100" />
+					</a>
+				</div>
+				<div>
+					<a>
+						<img src="./images/img4.png" width="320" height="100" />
+					</a>
+				</div>
 			</div>
-			<div>
-				<a>
-					<img src="./images/img2.jpg" width="320" height="100" />
-				</a>
+			<ul>
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div id="arrow">
+				<span class="arrow_l"></span>
+				<span class="arrow_r"></span>
 			</div>
-			<div>
-				<a>
-					<img src="./images/img3.jpg" width="320" height="100" />
-				</a>
-			</div>
-			<div>
-				<a>
-					<img src="./images/img4.png" width="320" height="100" />
-				</a>
-			</div>
-		</div>
-		<ul>
-			<li class="on"></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-		<div id="arrow">
-			<span class="arrow_l"></span>
-			<span class="arrow_r"></span>
-		</div>
-	</section>
+		</section>
+		<section>
+			<ul>
+				<li>安徽</li>
+				<li>湖北</li>
+				<li>山东</li>
+				<li>陕西</li>
+				<li>辽宁</li>
+			<ul>
+		</section>
+	</div>
 </body>
 </html>
